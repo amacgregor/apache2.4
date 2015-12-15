@@ -1,0 +1,6 @@
+<Macro vhost_ssl $site>
+SSLEngine               On
+SSLCertificateFile      /srv/ssl/public.crt
+SSLCertificateKeyFile   /srv/ssl/private.key
+SSLCertificateChainFile /srv/ssl/chain.crt
+</Macro>
