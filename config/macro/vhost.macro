@@ -1,6 +1,6 @@
 <Macro vhost $fqdn $email $fpm_host $fpm_port>
   ServerAdmin $email
-  ServerName $fqdn
+  ServerName $fqdns
   ServerAlias media.$fqdn www.$fqdn js.$fqdn css.$fqdn static.$fqdn *.$fqdn
 
   <Proxy fcgi://$fpm_host:$fpm_port>
