@@ -21,6 +21,12 @@ ENV APACHE_SERVERADMIN admin@localhost
 ENV APACHE_SERVERNAME localhost
 ENV APACHE_SERVERALIAS docker.localhost
 ENV APACHE_DOCUMENTROOT /srv/www
+ENV VIRTUAL_HOST localhost.com
+ENV PHP_FPM_HOST 127.0.0.1
+ENV PHP_FPM_PORT 9001
+
+# Restart apache2 because we changed configuration directives
+RUN apache2ctl restart
 
 EXPOSE 80 443
 
