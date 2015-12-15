@@ -2,7 +2,7 @@ FROM ubuntu:15.04
 
 RUN apt-get update && apt-get install -y apache2 libapache2-mod-proxy-html libapache2-mod-fcgid apache2-mpm-prefork
 
-RUN a2enmod proxy proxy_ajp proxy_http rewrite deflate headers proxy_balancer proxy_connect proxy_html macro
+RUN a2enmod proxy proxy_ajp proxy_http rewrite deflate headers proxy_balancer proxy_connect proxy_html macro xml2enc
 
 COPY ./config/apache2.conf /etc/apache2/apache2.conf
 COPY ./config/macro/ /etc/apache2/macro/
@@ -23,6 +23,7 @@ ENV APACHE_SERVERALIAS docker.localhost
 ENV APACHE_DOCUMENTROOT /srv/www
 
 EXPOSE 80 443
+
 ADD start.sh /start.sh
 RUN chmod 0755 /start.sh
 CMD ["bash", "start.sh"]

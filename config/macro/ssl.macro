@@ -1,4 +1,4 @@
-<Macro vhost_ssl $site>
+<Macro vhost_ssl>
 SSLEngine               On
 SSLCertificateFile      /srv/ssl/public.crt
 SSLCertificateKeyFile   /srv/ssl/private.key
